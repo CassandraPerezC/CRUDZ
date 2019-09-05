@@ -1,11 +1,17 @@
+<!DOCTYPE html>
+<html>
 <div class="row">
+   <h1 class="userT">Usuarios</h1>
   <div class="row">
    <?php if(count($posts)>0):?>
     <a href="<?php echo $this->basePath('crud/add'); ?>" class="btn btn-primary btn-default">Agregar</a>
-    <?php header("Content-type: text/html; charset=utf8"); ?>
-    
-    <br>
+      <?php header("Content-type: text/html; charset=utf8"); ?>
   </div>
+
+  <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+  ?>
+
 
   <table class="table table-hover">
   <thead>
@@ -51,3 +57,5 @@
 </div>
 
 
+
+</html>

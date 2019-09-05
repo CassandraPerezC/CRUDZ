@@ -31,3 +31,11 @@ div.container a.navbar-brand > img {
     margin-right: 4px;
     margin-top: -2px;
 }
+
+
+.userT{
+    font-size: 40px;
+    font: oblique bold cursive;
+    color: #0EA2A6;
+    text-align: center;
+}
