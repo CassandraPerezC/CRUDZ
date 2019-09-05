@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="row">
+   <?php if(count($posts)>0):?>
+    <a href="<?php echo $this->basePath('crud/add'); ?>" class="btn btn-primary btn-default">Agregar</a>
+    <?php header("Content-type: text/html; charset=utf8"); ?>
+    
+    <br>
+  </div>
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre(s)</th>
+      <th scope="col">Apellido Paterno</th>
+      <th scope="col">Apellido Materno</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+    <tbody>
+
+
+      <?php foreach ($posts as $user) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($user->getId()) ?></td>
+        <td><?= $this->escapeHtml($user->getNombre()) ?></td>
+        <td><?= $this->escapeHtml($user->getApPat()) ?></td>
+        <td><?= $this->escapeHtml($user->getApMat()) ?>  
+        </td>
+
+        <td><a href="<?php echo $this->url('crud', ['action' => 'edit', 'id' =>$user->getId()]);?>"
+         class="btn btn-success">Modificar</a>
+        </td>
+
+
+        <td><a href="<?php echo $this->url('crud', ['action' => 'delete', 'id' =>$user->getId()]);?>"
+         class="btn btn-danger">Eliminar</a>
+        </td>
+            
+    </tr>
+     <?php endforeach; ?>
+      <?php else:?>
+      <tr>
+      <center><td>La tabla no contiene datos </td></center>
+      </tr>
+      <?php endif;?>
+    
+    </tbody>
+    </table>
+
+</div>
+
+
